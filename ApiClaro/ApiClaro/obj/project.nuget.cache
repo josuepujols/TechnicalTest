@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "6ppFojk/vjCDYzVfK05zeeBNHAr9wa0aWodpH/Y3lnAeD0kKGlTW5yUD4M0iMUY3xTVr7GMEiZEI3gi943ctXA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Josue Pujols\\OneDrive\\Escritorio\\Prueba Tecnica Claro\\ApiClaro\\ApiClaro\\ApiClaro.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Josue Pujols\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Josue Pujols\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Josue Pujols\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Josue Pujols\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Josue Pujols\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Josue Pujols\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}

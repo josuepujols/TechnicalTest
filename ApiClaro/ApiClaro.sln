@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClaro", "ApiClaro\ApiClaro.csproj", "{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{97AE3558-DF76-4203-83AC-38A39D804AFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AE3558-DF76-4203-83AC-38A39D804AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AE3558-DF76-4203-83AC-38A39D804AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AE3558-DF76-4203-83AC-38A39D804AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AE3558-DF76-4203-83AC-38A39D804AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52D82FB-2EA2-4844-870D-5EC5C4876D8B}
+	EndGlobalSection
+EndGlobal
