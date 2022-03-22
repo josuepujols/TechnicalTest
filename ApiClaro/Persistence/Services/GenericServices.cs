@@ -32,7 +32,12 @@ namespace Persistence.Services
             //catch the response form the server 
             var result = ServerResponse.Content.ReadAsStringAsync();
 
-            return result.IsCompleted;
+            if (result.IsCompletedSuccessfully)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public async Task<bool> DeleteAsync(int Id)
@@ -40,12 +45,17 @@ namespace Persistence.Services
             var response = await http.DeleteAsync(url + "/" + Id);
             var result = response.Content.ReadAsStringAsync();
 
-            return result.IsCompleted;
+            if (result.IsCompletedSuccessfully)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public async Task<T> GetByIdAsync(int Id)
         {
-            var response = await http.GetStringAsync(url);
+            var response = await http.GetStringAsync(url + "/" + Id);
             var data = JsonConvert.DeserializeObject<T>(response);
 
             return data;
@@ -70,7 +80,12 @@ namespace Persistence.Services
             //catch the response form the server 
             var result = ServerResponse.Content.ReadAsStringAsync();
 
-            return result.IsCompleted;
+            if (result.IsCompletedSuccessfully)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
