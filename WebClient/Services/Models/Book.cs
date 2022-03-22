@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Persistence.Models
+namespace Services.Models
 {
     public class Book
     {

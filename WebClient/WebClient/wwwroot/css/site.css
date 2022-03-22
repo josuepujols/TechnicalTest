@@ -48,3 +48,14 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+.vertical-align {
+    vertical-align: middle !important;
+}
+
+#form-book {
+    margin: 20px auto !important;
+}
+
+.textarea {
+    resize: none;
+}

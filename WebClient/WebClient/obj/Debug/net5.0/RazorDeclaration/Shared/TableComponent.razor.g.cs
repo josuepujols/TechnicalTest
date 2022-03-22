@@ -104,18 +104,54 @@ using Services.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Shared\TableComponent.razor"
+#line 56 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Shared\TableComponent.razor"
        
     private IEnumerable<Book> books;
+    private string BookId = "";
 
-    private async Task GetBooks()
+
+    protected override async Task OnInitializedAsync()
     {
-        books = await BookServices.GetAll();
+        books = await GetBooks();
+    }
+
+    private async Task<IEnumerable<Book>> GetBooks()
+    {
+        return await BookServices.GetAll(BookId);
+    }
+
+    private void GoDetails(Book book)
+    {
+        NavManager.NavigateTo("/" + book.Id);
+    }
+
+    private void UpdateBook(Book book)
+    {
+        NavManager.NavigateTo("/edit/" + book.Id);
+    }
+
+    private async Task DeleteBook(Book book)
+    {
+        if (book.Id != 0)
+        {
+            bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "¿Esta seguro que desea borrar el libro " + book.Title + "?");
+            if (confirmed)
+            {
+                bool response = await BookServices.Delete(book.Id);
+                if (response)
+                {
+                    await JsRuntime.InvokeVoidAsync("alert", "Se ha borrado el libro " + book.Title);
+                    await OnInitializedAsync();
+                }
+            }
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private BookServices BookServices { get; set; }
     }
 }
