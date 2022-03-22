@@ -56,3 +56,8 @@ C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClie
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\WebClient.pdb
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\WebClient.genruntimeconfig.cache
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\WebClient.csproj.CopyComplete
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\RazorDeclaration\Shared\TableComponent.razor.g.cs
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\Razor\Shared\TableComponent.razor.g.cs
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Services.dll
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Services.pdb

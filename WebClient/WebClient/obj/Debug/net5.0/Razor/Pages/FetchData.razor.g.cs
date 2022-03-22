@@ -80,6 +80,20 @@ using WebClient.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\_Imports.razor"
+using Services.BookService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\_Imports.razor"
+using Services.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Pages\FetchData.razor"
 using WebClient.Data;
 

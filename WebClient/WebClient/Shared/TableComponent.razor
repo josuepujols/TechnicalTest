@@ -1,0 +1,46 @@
+﻿@using Services.BookService
+@using Services.Models
+@inject BookServices BookServices
+
+@if (books == null)
+{
+    <p><em>Loading data...</em></p>
+}
+else
+{
+    <table class="table mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">PageCount</th>
+                <th scope="col">Excerpt</th>
+                <th scope="col">PublishDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <th scope="row">@book.Id</th>
+                    <td>@book.Title</td>
+                    <td>@book.Description</td>
+                    <td>@book.PageCount</td>
+                    <td>@book.Excerpt</td>
+                    <td>@book.PublishDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private IEnumerable<Book> books;
+
+    private async Task GetBooks()
+    {
+        books = await BookServices.GetAll();
+    }
+}
