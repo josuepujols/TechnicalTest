@@ -59,3 +59,7 @@ a, .btn-link {
 .textarea {
     resize: none;
 }
+
+.bold {
+    font-weight: bold;
+}

@@ -1,13 +1,61 @@
-﻿@page "/{Id}"
+﻿@page "/books/{Id}"
+@inject BookServices BookServices
+@inject NavigationManager NavManager
 
-<h2 class="text-center">Agregar Libro</h2>
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card rounded p-4 mt-5">
+        <h2 class="text-center mt-3">
+            @book.Title
+        </h2>
+        <div class="mt-3">
+            <span class="bold">Descrpcion</span>
+            <p>
+                @book.Description
+            </p>
+        </div>
 
-<div class="container-fluid">
-    <h2>Nombre</h2>
+        <hr />
+
+        <div>
+            <span class="bold">Extracto</span>
+            <p>
+                @book.Excerpt
+            </p>
+        </div>
+
+        <hr />
+        <div class="d-flex justify-content-around">
+            <div>
+                <span class="bold">Numero de Paginas</span>
+                <p>
+                    @book.PageCount
+                </p>
+            </div>
+
+            <div>
+                <span class="bold">Fecha</span>
+                <p>
+                    @book.PublishDate
+                </p>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
 @code {
     [Parameter]
     public string Id { get; set; }
+
+    public Book book = new Book();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != null)
+        {
+            int IdConverted = Convert.ToInt32(Id);
+            book = await BookServices.GetById(IdConverted);
+        }
+    }
 }

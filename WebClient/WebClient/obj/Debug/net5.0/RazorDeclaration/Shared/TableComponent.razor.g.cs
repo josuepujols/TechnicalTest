@@ -122,7 +122,7 @@ using Services.Models;
 
     private void GoDetails(Book book)
     {
-        NavManager.NavigateTo("/" + book.Id);
+        NavManager.NavigateTo("/books/" + book.Id);
     }
 
     private void UpdateBook(Book book)

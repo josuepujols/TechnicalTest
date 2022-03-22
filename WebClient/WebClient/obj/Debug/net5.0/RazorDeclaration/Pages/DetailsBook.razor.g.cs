@@ -96,7 +96,7 @@ using Services.Models;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/{Id}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/books/{Id}")]
     public partial class DetailsBook : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -105,14 +105,27 @@ using Services.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 10 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Pages\DetailsBook.razor"
+#line 47 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Pages\DetailsBook.razor"
        
     [Parameter]
     public string Id { get; set; }
 
+    public Book book = new Book();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != null)
+        {
+            int IdConverted = Convert.ToInt32(Id);
+            book = await BookServices.GetById(IdConverted);
+        }
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BookServices BookServices { get; set; }
     }
 }
 #pragma warning restore 1591
