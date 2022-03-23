@@ -67,3 +67,8 @@ C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClie
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\Razor\Pages\AddBook.razor.g.cs
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\RazorDeclaration\Pages\DetailsBook.razor.g.cs
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\obj\Debug\net5.0\Razor\Pages\DetailsBook.razor.g.cs
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\BlazorPagination.dll
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll

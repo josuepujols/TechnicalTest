@@ -104,7 +104,7 @@ using Services.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Shared\NavMenu.razor"
+#line 30 "C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\WebClient\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

@@ -9,3 +9,4 @@ C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\Service
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\Services\obj\Debug\net5.0\Services.dll
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\Services\obj\Debug\net5.0\ref\Services.dll
 C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\Services\obj\Debug\net5.0\Services.pdb
+C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\WebClient\Services\obj\Debug\net5.0\Services.csproj.AssemblyReference.cache

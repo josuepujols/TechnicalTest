@@ -108,6 +108,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BlazorPagination": {
+              "target": "Package",
+              "version": "[0.2.16, )"
+            },
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
