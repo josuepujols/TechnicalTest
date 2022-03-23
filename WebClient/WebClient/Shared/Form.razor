@@ -1,0 +1,111 @@
+﻿@inject NavigationManager NavManager
+@inject BookServices BookServices
+@inject IJSRuntime JsRuntime
+
+<div id="form-book" class="card w-75 p-4 justify-content-center">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Titulo</label>
+        <input type="text" class="form-control"
+               id="exampleFormControlInput1"
+               placeholder="Book 1"
+               @bind="@book.Title" @oninput="@((e) => { book.Title=(string)e.Value;})" />
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Descripcion</label>
+        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                  @bind="@book.Description" @oninput="@((e) => { book.Description=(string)e.Value;})">
+        </textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput2">Numero de Paginas</label>
+        <input type="number"
+               class="form-control"
+               id="exampleFormControlInput2"
+               placeholder="10"
+               @bind="@book.PageCount" @oninput="@((e) => {
+                                                       try
+                                                       {
+                                                           book.PageCount=(int)e.Value;
+                                                       }
+                                                       catch (Exception ex)
+                                                       {
+
+                                                       }
+                                                   })" />
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea2">Extracto</label>
+        <textarea class="form-control textarea" id="exampleFormControlTextarea2"
+                  rows="3"
+                  placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                  @bind="@book.Excerpt" @oninput="@((e) => { book.Excerpt=(string)e.Value;})">
+        </textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput3">Fecha</label>
+        <input type="datetime-local"
+               class="form-control"
+               id="exampleFormControlInput3"
+               @bind="@book.PublishDate" @oninput="@((e) => { book.PublishDate=(DateTime)Convert.ToDateTime(e.Value);})" />
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button @onclick="BackHome" class="btn btn-danger mr-3">Atras</button>
+        <button @onclick="CreateOrUpadate" class="btn btn-success">Guardar</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+    private Book book = new Book();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != null)
+        {
+            int IdConverted = Convert.ToInt32(Id);
+            book = await BookServices.GetById(IdConverted);
+        }
+    }
+
+    private async Task CreateOrUpadate()
+    {
+        //Check if the user is going to update or delete
+        bool response;
+        if (Id != null)
+        {
+            response = await BookServices.Update(book.Id, book);
+            if (response)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Se ha actualizado el libro " + book.Title);
+                book = new Book();
+                BackHome();
+            }
+            else
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Ha ocurrido un error al actualizado el libro " + book.Title);
+            }
+        }
+        else
+        {
+            response = await BookServices.Add(book);
+            if (response)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Se ha creado el libro " + book.Title);
+                book = new Book();
+            }
+            else
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Ha ocurrido un error al crear el libro " + book.Title);
+            }
+        }
+;
+    }
+
+    private void BackHome()
+    {
+        NavManager.NavigateTo("/");
+    }
+}

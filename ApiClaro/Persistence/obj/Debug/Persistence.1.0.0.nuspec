@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Persistence</id>
+    <version>1.0.0</version>
+    <authors>Persistence</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="5.0.15" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\ApiClaro\Persistence\bin\Debug\net5.0\Persistence.runtimeconfig.json" target="lib\net5.0\Persistence.runtimeconfig.json" />
+    <file src="C:\Users\Josue Pujols\OneDrive\Escritorio\Prueba Tecnica Claro\ApiClaro\Persistence\bin\Debug\net5.0\Persistence.dll" target="lib\net5.0\Persistence.dll" />
+  </files>
+</package>

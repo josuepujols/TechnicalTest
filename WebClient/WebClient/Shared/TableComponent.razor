@@ -1,0 +1,97 @@
+﻿@using Services.BookService
+@using Services.Models
+@inject BookServices BookServices
+@inject NavigationManager NavManager
+@inject IJSRuntime JsRuntime
+
+
+@if (books == null)
+{
+    <p><em>Loading data...</em></p>
+}
+else
+{
+    <div class="d-flex mt-3 w-100">
+        <div class="col-md-10">
+            <input class="form-control" placeholder="Id del libro" @bind="@BookId" @oninput="@((e) => { BookId=(string)e.Value;})" />
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" @onclick="OnInitializedAsync">
+                Buscar
+            </button>
+        </div>
+    </div>
+    <table class="table mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Page Count</th>
+                <th scope="col">Publis hDate</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <th class="vertical-align" scope="row">@book.Id</th>
+                    <td class="vertical-align">@book.Title</td>
+                    <td class="vertical-align">@book.PageCount</td>
+                    <td class="vertical-align">@book.PublishDate</td>
+                    <td class="vertical-align">
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info mr-2" @onclick="() => GoDetails(book)">Detalles</button>
+                            <button class="btn btn-success mr-2" @onclick="() => UpdateBook(book)">Editar</button>
+                            <button class="btn btn-danger" @onclick="() => DeleteBook(book)">Borrar</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private IEnumerable<Book> books;
+    private string BookId = "";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = await GetBooks();
+    }
+
+    private async Task<IEnumerable<Book>> GetBooks()
+    {
+        return await BookServices.GetAll(BookId);
+    }
+
+    private void GoDetails(Book book)
+    {
+        NavManager.NavigateTo("/books/" + book.Id);
+    }
+
+    private void UpdateBook(Book book)
+    {
+        NavManager.NavigateTo("/edit/" + book.Id);
+    }
+
+    private async Task DeleteBook(Book book)
+    {
+        if (book.Id != 0)
+        {
+            bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "¿Esta seguro que desea borrar el libro " + book.Title + "?");
+            if (confirmed)
+            {
+                bool response = await BookServices.Delete(book.Id);
+                if (response)
+                {
+                    await JsRuntime.InvokeVoidAsync("alert", "Se ha borrado el libro " + book.Title);
+                    await OnInitializedAsync();
+                }
+            }
+        }
+    }
+}
