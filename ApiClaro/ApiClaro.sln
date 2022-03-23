@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClaro", "ApiClaro\ApiClaro.csproj", "{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiClaro", "ApiClaro\ApiClaro.csproj", "{DC6DBA0E-5A37-4C76-983E-867A1D15F72A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{97AE3558-DF76-4203-83AC-38A39D804AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{97AE3558-DF76-4203-83AC-38A39D804AFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
